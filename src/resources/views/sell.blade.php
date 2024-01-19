@@ -18,7 +18,7 @@
                 </label><br>
                 <span class="error">{{$errors->first('image')}}</span>
             </div>
-            <div class="sell-form__item">
+            <div class="sell-form__item2">
                 <span>商品の詳細（下線を付ける）</span><br>
             </div>
             <div class="sell-form__item">

@@ -14,7 +14,7 @@
         @csrf
             <div class="profile-form__item">
                 <img class="profile-form__img" src="{{ asset('storage/images/'.$profile['image']) ?? '' }}" alt="">
-                <label class="profile-form__buttonn">
+                <label class="profile-form__img-label">
                     <input class="profile-form__img-button" type="file" name="image">画像を選択する
                 </label><br>
                 <span class="error">{{$errors->first('image')}}</span>
