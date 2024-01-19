@@ -69,17 +69,18 @@
     color: white;
 }
 
-.header__button {
+.header__sell {
     width: 10%;
-    margin: auto;
+    margin: auto 0;
 }
 
-.header__button-item {
-    width: 70%;
+.header__sell-item {
+    width: 100%;
     background-color: white;
-    border-radius: 10px;
-    padding: 7px;
+    border-radius: 5px;
+    padding: 10px 25px;
     font-weight: bold;
+    color: black;
 }
 
 .main {
