@@ -10,4 +10,8 @@ class ItemController extends Controller
         $menu_flg = "1";
         return view('index' , compact('menu_flg'));
     }
+    public function sell(Request $request){
+        $menu_flg = "1";
+        return view('sell' , compact('menu_flg'));
+    }
 }

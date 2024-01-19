@@ -46,8 +46,8 @@
       <a class="header__register-item" href="/register">会員登録</a>
     </div>
     @endif
-    <div class="header__button">
-      <button class="header__button-item">出品</button>
+    <div class="header__sell">
+      <a class="header__sell-item" href="/sell">出品</a>
     </div>
     @endif
   </header>

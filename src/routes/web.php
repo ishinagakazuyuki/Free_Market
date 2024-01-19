@@ -16,7 +16,7 @@ use App\Http\Controllers\MypageController;
 */
 
 Route::get('/', [ItemController::class, 'index']);
-
+Route::get('/sell', [ItemController::class, 'sell']);
 
 
 Route::get('/mypage', [MypageController::class, 'mypage']);

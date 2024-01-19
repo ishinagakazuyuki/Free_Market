@@ -1,20 +1,20 @@
-.register {
+.profile {
     width: 30%;
     margin: 100px auto;
 }
 
-.register__title {
+.profile__title {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 50px;
 }
 
-.register__content {
+.profile__content {
     padding: 0 5px;
 }
 
-.register-form__img {
+.profile-form__img {
     width: 24%;
     height: 100px;
     border: solid 1px black;
@@ -22,7 +22,7 @@
     background-color: black;
 }
 
-.register-form__buttonn {
+.profile-form__buttonn {
     margin-left: 30px;
     border: solid 1px red;
     color: red;
@@ -30,35 +30,31 @@
     border-radius: 10px;
 }
 
-.register-form__img-button {
+.profile-form__img-button {
     display: none;
 
 }
 
-.register-form__item {
+.profile-form__item {
     margin-bottom: 35px;
     font-weight: bold;
 }
 
-.register-form__input {
+.profile-form__input {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
 }
 
-.register-form__button {
+.profile-form__button {
     margin-bottom: 30px;
 }
 
-.register-form__button-submit {
+.profile-form__button-submit {
     width: 100%;
     padding: 10px;
     background-color: red;
     color: white;
     border: none;
     border-radius: 5px;
-}
-
-.login-here {
-    text-align: center;
 }
