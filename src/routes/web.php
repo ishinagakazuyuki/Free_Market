@@ -17,7 +17,7 @@ use App\Http\Controllers\MypageController;
 
 Route::get('/', [ItemController::class, 'index']);
 Route::get('/sell', [ItemController::class, 'sell']);
-
+Route::post('/sell', [ItemController::class, 'sale']);
 
 Route::get('/mypage', [MypageController::class, 'mypage']);
 Route::get('/mypage/profile', [MypageController::class, 'profile']);

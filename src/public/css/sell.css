@@ -1,5 +1,5 @@
 .sell {
-    width: 30%;
+    width: 50%;
     margin: 100px auto;
 }
 
@@ -15,19 +15,23 @@
 }
 
 .sell-form__img {
-    width: 24%;
-    height: 100px;
-    border: solid 1px black;
-    border-radius: 80px;
-    background-color: black;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-size: 20px;
+    border: dotted 2px;
+    height: 150px;
 }
 
 .sell-form__buttonn {
-    margin-left: 30px;
     border: solid 1px red;
     color: red;
     padding: 10px 15px;
     border-radius: 10px;
+    width: 30%;
+    display: block;
+    margin: 50px auto;
+    text-align: center;
+
 }
 
 .sell-form__img-button {
@@ -36,14 +40,56 @@
 }
 
 .sell-form__item {
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     font-weight: bold;
+    font-size: 20px;
 }
 
 .sell-form__input {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
+    font-size: 20px;
+}
+
+.sell-form__item2 {
+    margin-bottom: 25px;
+    color: Gray;
+    font-size: 25px;
+    font-weight: bold;
+    border-bottom: solid 2px;
+}
+
+.sell-form__select {
+    width: 100%;
+    padding: 10px;
+    border: solid 1px;
+    border-radius: 5px;
+}
+
+.sell-form__textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px black;
+}
+
+.value_item::before {
+    content: '￥';
+    font-size: 25px;
+    position: absolute;
+    left: 5px;
+    top: 58px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.value_item {
+    position: relative;
+}
+
+.value_input {
+    padding-left: 30px;
 }
 
 .sell-form__button {
@@ -57,4 +103,11 @@
     color: white;
     border: none;
     border-radius: 5px;
+    font-size: 20px;
+}
+
+.another_input {
+    padding-left: 30px;
+    font-size: 15px;
+    color: red;
 }
