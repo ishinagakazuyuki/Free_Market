@@ -17,7 +17,7 @@
         <form class="sell-form" action="/sell" method="post" enctype="multipart/form-data">
         @csrf
             <div class="sell-form__img">
-                <label class="sell-form__buttonn">
+                <label class="sell-form__img-item">
                     <input class="sell-form__img-button" type="file" name="image" value="{{ old('image') }}">画像を選択する
                 </label>
                 <span class="error">{{$errors->first('image')}}</span>
