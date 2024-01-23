@@ -79,5 +79,9 @@ class ItemController extends Controller
         $condition = condition::get();
         return view('sell' , compact('menu_flg','brand','category','condition'));
     }
+    public function detail(Request $request){
+        $menu_flg = "1";
+        return view('detail' , compact('menu_flg'));
+    }
 }
 

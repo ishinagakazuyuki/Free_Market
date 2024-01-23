@@ -1,0 +1,106 @@
+.mypage_top {
+    width: 100%;
+    margin: 100px;
+    display: flex;
+}
+.mypage_top-image {
+    margin-left: 100px;
+}
+
+.mypage_top-image-item {
+    width: 100%;
+    height: 120px;
+    border: solid 1px black;
+    border-radius: 80px;
+    background-color: black;
+}
+
+.mypage_top-name {
+    width: 30%;
+    margin: auto;
+}
+
+.mypage_top-name-item {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.mypage_top-profile {
+    width: 35%;
+    margin: auto;
+}
+
+.mypage_top-profile-item {
+    border: solid 1px red;
+    color: red;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.mypage_main-top {
+    border-bottom: solid 1px;
+}
+
+.mypage_main-tab {
+    width: 30%;
+    display: flex;
+    list-style: none;
+    margin-left: 150px;
+}
+
+.mypage_main-list {
+    font-size: 20px;
+    margin-right: 50px;
+}
+
+.mypage_main-list-item {
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+}
+
+.mypage_main-list-item.active {
+    color: red;
+    font-weight: bold;
+}
+
+.tab-content {
+    width: 100%;
+    margin: 50px 100px;
+    padding: 0 25% 0 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tab-content-item {
+    width: 23%;
+    margin-bottom: 50px;
+}
+
+.tab-content-button {
+    width: 85%;
+    border: none;
+}
+
+.tab-content-image {
+    width: 100%;
+    height: 200px;
+}
+
+.tab-box0 {
+    display: none;
+}
+
+.tab-box2 {
+    display: block;
+    content: "";
+    width: 48.5%;
+}
+
+.tab-box3 {
+    display: block;
+    content: "";
+    width: 23%;
+}

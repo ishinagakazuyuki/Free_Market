@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\profile;
+use App\Models\item;
+use App\Models\buyer;
+
 use App\Http\Requests\ProfileRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +16,11 @@ class MypageController extends Controller
 {
     public function mypage(Request $request){
         $menu_flg = "1";
-        return view('mypage' , compact('menu_flg'));
+        $user = Auth::user();
+        $username = profile::where('user_id','=',$user['id'])->first();
+        $item = item::where('user_id','=',$user['id'])->orderBy('items.id', 'desc')->get();
+        $buy = buyer::join('items','buyers.items_id','items.id')->where('buyers.user_id','=',$user['id'])->orderBy('buyers.id', 'desc')->get();
+        return view('mypage' , compact('menu_flg','username','item','buy'));
     }
     public function profile(Request $request){
         $menu_flg = "1";
