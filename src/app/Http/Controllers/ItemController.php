@@ -6,6 +6,7 @@ use App\Models\brand;
 use App\Models\category;
 use App\Models\condition;
 use App\Models\item;
+use App\Models\mylist;
 
 use App\Http\Requests\SaleRequest;
 use Illuminate\Http\Request;
@@ -16,7 +17,14 @@ class ItemController extends Controller
 {
     public function index(Request $request){
         $menu_flg = "1";
-        return view('index' , compact('menu_flg'));
+        $user = Auth::user();
+        $item = item::orderBy('id', 'desc')->get();
+        if (empty($user['id'])){
+            $mylist = null;
+        }else {
+            $mylist = mylist::join('items','mylists.items_id','items.id')->where('mylists.user_id','=',$user['id'])->orderBy('mylists.id', 'desc')->get();
+        }
+        return view('index' , compact('menu_flg','item','mylist'));
     }
     public function sell(Request $request){
         $menu_flg = "1";
