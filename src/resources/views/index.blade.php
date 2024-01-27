@@ -20,6 +20,7 @@
             <div class="tab-content-item">
                 <form action="?" method="get">
                     <button class="tab-content-button" type="submit" value="get" formaction="{{ route('detail',['item_id' => $items['id'] ]) }}">
+                    <input type="hidden" name="id" value="{{ $items['id'] }}"/>
                         <img src="{{ asset('storage/images/'.$items['image']) }}"  class="tab-content-image">
                     </button>
                 </form>
@@ -33,7 +34,8 @@
             @foreach ($mylist as $mylists)
             <div class="tab-content-item">
                 <form action="?" method="get">
-                    <button class="tab-content-button" type="submit" value="get" formaction="{{ route('detail',['item_id' => $mylists['id'] ]) }}">
+                    <button class="tab-content-button" type="submit" value="get" formaction="{{ route('detail',['item_id' => $mylists['items_id'] ]) }}">
+                    <input type="hidden" name="id" value="{{ $mylists['items_id'] }}"/>
                         <img src="{{ asset('storage/images/'.$mylists['image']) }}"  class="tab-content-image">
                     </button>
                 </form>

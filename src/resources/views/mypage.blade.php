@@ -31,6 +31,7 @@
             <div class="tab-content-item">
                 <form action="?" method="get">
                     <button class="tab-content-button" type="submit" value="get" formaction="{{ route('detail',['item_id' => $items['id'] ]) }}">
+                    <input type="hidden" name="id" value="{{ $items['id'] }}"/>
                         <img src="{{ asset('storage/images/'.$items['image']) }}"  class="tab-content-image">
                     </button>
                 </form>
@@ -42,6 +43,7 @@
             <div class="tab-content-item">
                 <form action="?" method="get">
                     <button class="tab-content-button" type="submit" value="get" formaction="{{ route('detail',['item_id' => $buys['items_id'] ]) }}">
+                    <input type="hidden" name="id" value="{{ $buys['items_id'] }}"/>
                         <img src="{{ asset('storage/images/'.$buys['image']) }}"  class="tab-content-image">
                     </button>
                 </form>

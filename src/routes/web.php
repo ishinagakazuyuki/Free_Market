@@ -19,6 +19,8 @@ Route::get('/', [ItemController::class, 'index']);
 Route::get('/sell', [ItemController::class, 'sell']);
 Route::post('/sell', [ItemController::class, 'sale']);
 Route::get('/detail/{item_id}', [ItemController::class, 'detail'])->name('detail');
+Route::post('/favorite', [ItemController::class, 'favorite']);
+Route::get('/comment', [ItemController::class, 'comment']);
 
 Route::get('/mypage', [MypageController::class, 'mypage']);
 Route::get('/mypage/profile', [MypageController::class, 'profile']);

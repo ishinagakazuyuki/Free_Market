@@ -7,6 +7,7 @@ use App\Models\category;
 use App\Models\condition;
 use App\Models\item;
 use App\Models\mylist;
+use App\Models\comment;
 
 use App\Http\Requests\SaleRequest;
 use Illuminate\Http\Request;
@@ -89,7 +90,44 @@ class ItemController extends Controller
     }
     public function detail(Request $request){
         $menu_flg = "1";
-        return view('detail' , compact('menu_flg'));
+        $item = item::where('id','=',$request['id'])->first();
+        $brand = brand::where('id','=',$item['brands_id'])->first();
+        $category = category::where('id','=',$item['categories_id'])->first();
+        $condition = condition::where('id','=',$item['categories_id'])->first();
+        $favorite = mylist::where('items_id','=',$request['id'])->count();
+        $comment = comment::where('items_id','=',$request['id'])->count();
+        return view('detail' , compact('menu_flg','item','brand','category','condition','favorite','comment'));
+    }
+    public function favorite(Request $request){
+        $menu_flg = "1";
+        $user = Auth::user();
+        $favorite = mylist::where('user_id','=',$user['id'])->where('items_id','=',$request['id'])->first();
+        if (empty($favorite)){
+            $favorites = [
+                'user_id' => $user['id'],
+                'items_id' => $request['id'],
+            ];
+            mylist::create($favorites);
+        }else {
+            $favorite->delete();
+        };
+        $item = item::where('id','=',$request['id'])->first();
+        $brand = brand::where('id','=',$item['brands_id'])->first();
+        $category = category::where('id','=',$item['categories_id'])->first();
+        $condition = condition::where('id','=',$item['categories_id'])->first();
+        $favorite = mylist::where('items_id','=',$request['id'])->count();
+        $comment = comment::where('items_id','=',$request['id'])->count();
+        return view('detail' , compact('menu_flg','item','brand','category','condition','favorite','comment'));
+    }
+    public function comment(Request $request){
+        $menu_flg = "1";
+        $item = item::where('id','=',$request['id'])->first();
+        $brand = brand::where('id','=',$item['brands_id'])->first();
+        $category = category::where('id','=',$item['categories_id'])->first();
+        $condition = condition::where('id','=',$item['categories_id'])->first();
+        $favorite = mylist::where('items_id','=',$request['id'])->count();
+        $comment = comment::where('items_id','=',$request['id'])->count();
+        return view('detail' , compact('menu_flg','item','brand','category','condition','favorite','comment'));
     }
 }
 
