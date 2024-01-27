@@ -1,0 +1,132 @@
+.comment {
+    width: 100%;
+    display: flex;
+}
+
+.comment__image {
+    width: 35%;
+    margin: 100px 100px 0 100px;
+}
+
+.comment__image-item {
+    width: 80%;
+    height: 30vw;
+}
+
+.comment__main {
+    width: 50%;
+    margin-top: 100px;
+}
+
+.comment__title {
+    margin-bottom: 15px;
+}
+
+.comment__name {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.comment__value {
+    margin-bottom: 15px;
+}
+
+.comment__value-item {
+    font-size: 35px;
+}
+
+.comment__item {
+    display: flex;
+    margin-bottom: 50px;
+    margin-left: 10px;
+}
+
+.comment__favorite {
+    text-align: center;
+    margin-right: 50px;
+}
+
+.comment__favorite-button {
+    font-size: 30px;
+    background-color: white;
+    border: none;
+}
+
+.comment__favorite-count {
+    font-size: 15px;
+}
+
+.comment__comment {
+    text-align: center;
+    margin-right: 50px;
+}
+
+.comment__comment-button {
+    font-size: 30px;
+    background-color: white;
+    border: none;
+}
+
+.comment__comment-count {
+    font-size: 15px;
+}
+
+.comment__list {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.comment__list-user {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.left-margin {
+    margin-left: 35%;
+}
+
+.comment__list-item {
+    width: 10%;
+    margin: auto 0;
+}
+
+.comment__user-image {
+    width: 70%;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
+.comment__user-name {
+    font-size: 20px;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.comment__list-comment {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.comment__list-comment-item {
+    border: solid 1px;
+    border-radius: 10px;
+    border: none;
+}
+
+.comment__write-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.comment__write-comment {
+    font-size: 15px;
+}
+
+.comment__write-button {
+    width: 50%;
+    border: solid 1px red;
+    background-color: red;
+    color: white;
+    padding: 10px 0;
+}
