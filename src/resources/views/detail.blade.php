@@ -15,7 +15,10 @@
             <span>{{ $brand['name'] }}</span>
         </div>
         <div class="detail__value">
-            <span class="detail__value-item">￥{{ $item['value'] }}（値段）</span>
+            @php
+            $value = number_format($item['value']);
+            @endphp
+            <span class="detail__value-item">￥{{ $value }}（値段）</span>
         </div>
         <div class="detail__item">
             <div class="detail__favorite">
