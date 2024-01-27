@@ -51,6 +51,14 @@
             <div class="comment__list-comment">
                 <p class="comment__list-comment-item">{{ $users['comment'] }}</p>
             </div>
+            <div class="comment__delete">
+                <form action="?" method="post">
+                @csrf
+                    <button class="comment__delete-button" type="submit" value="post" formaction="/comment/delete">コメントを削除する</button>
+                    <input type="hidden" name="comment_id" value="{{ $users['id'] }}"/>
+                    <input type="hidden" name="id" value="{{ $item['id'] }}"/>
+                </form>
+            </div>
             @endforeach
             @endif
         </div>

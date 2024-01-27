@@ -8,6 +8,7 @@ use App\Models\condition;
 use App\Models\item;
 use App\Models\mylist;
 use App\Models\comment;
+use App\Models\profile;
 
 use App\Http\Requests\SaleRequest;
 use App\Http\Requests\CommentRequest;
@@ -129,7 +130,7 @@ class ItemController extends Controller
         $condition = condition::where('id','=',$item['categories_id'])->first();
         $favorite = mylist::where('items_id','=',$request['id'])->count();
         $comment = comment::where('items_id','=',$request['id'])->count();
-        $user = comment::join('profiles','comments.user_id','profiles.user_id')->where('items_id','=',$request['id'])->get();
+        $user = profile::join('comments','profiles.user_id','comments.user_id')->where('items_id','=',$request['id'])->get();
         return view('comment' , compact('menu_flg','item','brand','category','condition','favorite','comment','user'));
     }
     public function post(CommentRequest $request){
@@ -147,7 +148,7 @@ class ItemController extends Controller
         $condition = condition::where('id','=',$item['categories_id'])->first();
         $favorite = mylist::where('items_id','=',$request['id'])->count();
         $comment = comment::where('items_id','=',$request['id'])->count();
-        $user = comment::join('profiles','comments.user_id','profiles.user_id')->where('items_id','=',$request['id'])->get();
+        $user = profile::join('comments','profiles.user_id','comments.user_id')->where('items_id','=',$request['id'])->get();
         return view('comment' , compact('menu_flg','item','brand','category','condition','favorite','comment','user'));
     }
     public function comment_favorite(Request $request){
@@ -169,7 +170,20 @@ class ItemController extends Controller
         $condition = condition::where('id','=',$item['categories_id'])->first();
         $favorite = mylist::where('items_id','=',$request['id'])->count();
         $comment = comment::where('items_id','=',$request['id'])->count();
-        $user = comment::join('profiles','comments.user_id','profiles.user_id')->where('items_id','=',$request['id'])->get();
+        $user = profile::join('comments','profiles.user_id','comments.user_id')->where('items_id','=',$request['id'])->get();
+        return view('comment' , compact('menu_flg','item','brand','category','condition','favorite','comment','user'));
+    }
+    public function comment_delete(Request $request){
+        $menu_flg = "1";
+        $delete = comment::where('id','=',$request['comment_id'])->first();
+        $delete->delete();
+        $item = item::where('id','=',$request['id'])->first();
+        $brand = brand::where('id','=',$item['brands_id'])->first();
+        $category = category::where('id','=',$item['categories_id'])->first();
+        $condition = condition::where('id','=',$item['categories_id'])->first();
+        $favorite = mylist::where('items_id','=',$request['id'])->count();
+        $comment = comment::where('items_id','=',$request['id'])->count();
+        $user = profile::join('comments','profiles.user_id','comments.user_id')->where('items_id','=',$request['id'])->get();
         return view('comment' , compact('menu_flg','item','brand','category','condition','favorite','comment','user'));
     }
 }

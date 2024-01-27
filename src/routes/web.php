@@ -23,6 +23,7 @@ Route::post('/favorite', [ItemController::class, 'favorite']);
 Route::get('/comment', [ItemController::class, 'comment']);
 Route::post('/comment', [ItemController::class, 'post']);
 Route::post('/comment/favorite', [ItemController::class, 'comment_favorite']);
+Route::post('/comment/delete', [ItemController::class, 'comment_delete']);
 
 Route::get('/mypage', [MypageController::class, 'mypage']);
 Route::get('/mypage/profile', [MypageController::class, 'profile']);

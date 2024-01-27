@@ -114,6 +114,19 @@
     border: none;
 }
 
+.comment__delete {
+    width: 50%;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.comment__delete-button {
+    color: red;
+    font-size: 15px;
+    border: none;
+    background-color: white;
+}
+
 .comment__write-title {
     font-size: 20px;
     font-weight: bold;
