@@ -1,0 +1,30 @@
+.payment {
+    width: 30%;
+    margin: 100px auto;
+}
+
+.payment__title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.payment-form__item {
+    margin-bottom: 35px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.payment-form__button {
+    margin-bottom: 30px;
+}
+
+.payment-form__button-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}

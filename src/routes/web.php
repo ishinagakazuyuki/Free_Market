@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\PurchaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,11 @@ Route::post('/comment/delete', [ItemController::class, 'comment_delete']);
 Route::get('/mypage', [MypageController::class, 'mypage']);
 Route::get('/mypage/profile', [MypageController::class, 'profile']);
 Route::post('/mypage/profile', [MypageController::class, 'update']);
+
+Route::get('/purchase/{item_id}', [PurchaseController::class, 'purchase'])->name('purchase');
+Route::get('/purchase/payment/{item_id}', [PurchaseController::class, 'payment'])->name('purchase.payment');
+Route::post('/purchase/payment/{item_id}', [PurchaseController::class, 'payment_update'])->name('purchase.payment_update');
+Route::get('/purchase/address/{item_id}', [PurchaseController::class, 'address'])->name('purchase.address');
+Route::post('/purchase/address/{item_id}', [PurchaseController::class, 'address_update'])->name('purchase.address_update');
+
+Route::post('/sold', [PurchaseController::class, 'sold']);
