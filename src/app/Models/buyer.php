@@ -12,7 +12,9 @@ class buyer extends Model
     protected $fillable = [
         'user_id',
         'items_id',
-        'date',
+        'datetime',
         'payment',
+        'session_id',
+        'pay_flg',
     ];
 }

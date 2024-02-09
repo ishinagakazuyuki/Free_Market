@@ -48,8 +48,7 @@
         </div>
     </div>
     <div class="purchase__right">
-        <form action="/sold" method="post">
-        @csrf
+        <form action="/sold" method="get">
             <div class="purchase__right-info">
                 <div class="purchase__right-top">
                     <span class="purchase__right-item">商品代金</span>
@@ -70,6 +69,9 @@
             <div class="purchase__button">
                 <button class="purchase__button-item" type="submit">購入する</button>
                 <input type="hidden" name="id" value="{{ $item['id'] }}"/>
+                <input type="hidden" name="name" value="{{ $item['name'] }}"/>
+                <input type="hidden" name="payment" value="{{ $payment }}"/>
+                <input type="hidden" name="value" value="{{ $item['value'] }}"/>
             </div>
         </form>
     </div>

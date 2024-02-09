@@ -17,8 +17,10 @@ class Buyers extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('items_id')->constrained()->cascadeOnDelete();
-            $table->date('date');
+            $table->datetime('datetime');
             $table->string('payment');
+            $table->string('session_id');
+            $table->integer('pay_flg');
             $table->timestamps();
         });
     }
