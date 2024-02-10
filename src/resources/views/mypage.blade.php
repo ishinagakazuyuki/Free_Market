@@ -9,10 +9,14 @@
 <div class="mypage">
     <div class="mypage_top">
         <div class="mypage_top-image">
-            <img class="mypage_top-image-item" src="{{ asset('storage/images/'.'1.jpg') ?? '' }}" alt="">
+            @if(!empty($profile['image']))
+            <img class="mypage_top-image-item" src="{{ asset('storage/images/'.$profile['image']) }}" alt="">
+            @else
+            <img class="mypage_top-image-item" src="{{ asset('storage/images/default.jpg') }}" alt="">
+            @endif
         </div>
         <div class="mypage_top-name">
-            <span class="mypage_top-name-item">{{ $username['name'] }}</span>
+            <span class="mypage_top-name-item">{{ $profile['name'] ?? '名前を設定してください' }}</span>
         </div>
         <div class="mypage_top-profile">
             <a href="/mypage/profile" class="mypage_top-profile-item">プロフィールを編集</a>

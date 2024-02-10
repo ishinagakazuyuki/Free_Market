@@ -17,10 +17,11 @@ class MypageController extends Controller
     public function mypage(Request $request){
         $menu_flg = "1";
         $user = Auth::user();
-        $username = profile::where('user_id','=',$user['id'])->first();
+        $profile = profile::where('user_id','=',$user['id'])->first();
         $item = item::where('user_id','=',$user['id'])->orderBy('items.id', 'desc')->get();
-        $buy = buyer::join('items','buyers.items_id','items.id')->where('buyers.user_id','=',$user['id'])->orderBy('buyers.id', 'desc')->get();
-        return view('mypage' , compact('menu_flg','username','item','buy'));
+        $buy = buyer::join('items','buyers.items_id','items.id')->where('buyers.user_id','=',$user['id'])->where('buyers.pay_flg','=',0)
+            ->orderBy('buyers.id', 'desc')->get();
+        return view('mypage' , compact('menu_flg','profile','item','buy'));
     }
     public function profile(Request $request){
         $menu_flg = "1";

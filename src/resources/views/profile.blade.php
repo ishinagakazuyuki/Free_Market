@@ -13,7 +13,11 @@
         <form class="profile-form" action="/mypage/profile" method="post" enctype="multipart/form-data">
         @csrf
             <div class="profile-form__item">
+                @if(!empty($profile['image']))
                 <img class="profile-form__img" src="{{ asset('storage/images/'.$profile['image']) ?? '' }}" alt="">
+                @else
+                <img class="profile-form__img" src="{{ asset('storage/images/default.jpg') ?? '' }}" alt="">
+                @endif
                 <label class="profile-form__img-label">
                     <input class="profile-form__img-button" type="file" name="image">画像を選択する
                 </label><br>
