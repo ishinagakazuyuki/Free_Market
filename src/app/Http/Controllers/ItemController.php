@@ -27,6 +27,12 @@ class ItemController extends Controller
             $mylist = null;
         }else {
             $mylist = mylist::join('items','mylists.items_id','items.id')->where('mylists.user_id','=',$user['id'])->orderBy('mylists.id', 'desc')->get();
+            $profile = profile::where('user_id','=',$user['id'])->first();
+            if (empty($profile)){
+                profile::create([
+                    'user_id' => $user['id'],
+                ]);
+            }
         }
         return view('index' , compact('menu_flg','item','mylist'));
     }

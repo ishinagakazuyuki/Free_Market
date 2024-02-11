@@ -16,7 +16,6 @@ class Permissions extends Migration
         Schema::create('permissions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('items_id')->constrained()->cascadeOnDelete();
             $table->integer('permission');
             $table->timestamps();
         });

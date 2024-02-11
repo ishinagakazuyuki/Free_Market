@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\ManageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,6 @@ Route::post('/purchase/address/{item_id}', [PurchaseController::class, 'address_
 Route::get('/sold', [PurchaseController::class, 'sold']);
 Route::get('/success/{item_id}/{method}', [PurchaseController::class, 'success']);
 Route::get('/cancel/{buyer_id}', [PurchaseController::class, 'cancel']);
+
+Route::get('/manage', [ManageController::class, 'manage']);
+Route::post('/manage/delete', [ManageController::class, 'delete']);
