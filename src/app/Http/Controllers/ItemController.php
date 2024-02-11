@@ -130,6 +130,7 @@ class ItemController extends Controller
     }
     public function comment(Request $request){
         $menu_flg = "1";
+        $own = Auth::user();
         $item = item::where('id','=',$request['id'])->first();
         $brand = brand::where('id','=',$item['brands_id'])->first();
         $category = category::where('id','=',$item['categories_id'])->first();
@@ -137,7 +138,7 @@ class ItemController extends Controller
         $favorite = mylist::where('items_id','=',$request['id'])->count();
         $comment = comment::where('items_id','=',$request['id'])->count();
         $user = profile::join('comments','profiles.user_id','comments.user_id')->where('items_id','=',$request['id'])->get();
-        return view('comment' , compact('menu_flg','item','brand','category','condition','favorite','comment','user'));
+        return view('comment' , compact('menu_flg','own','item','brand','category','condition','favorite','comment','user'));
     }
     public function post(CommentRequest $request){
         $menu_flg = "1";

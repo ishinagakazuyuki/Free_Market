@@ -51,6 +51,7 @@
             <div class="comment__list-comment">
                 <p class="comment__list-comment-item">{{ $users['comment'] }}</p>
             </div>
+            @if ($users['id'] == $own['id'])
             <div class="comment__delete">
                 <form action="?" method="post">
                 @csrf
@@ -59,6 +60,7 @@
                     <input type="hidden" name="id" value="{{ $item['id'] }}"/>
                 </form>
             </div>
+            @endif
             @endforeach
             @endif
         </div>
