@@ -44,14 +44,14 @@
                 <div class="comment__list-item">
                     <img class="comment__user-image" src="{{ asset('storage/images/'.$users['image']) }}" alt="">
                 </div>
-                <div class="comment__list-item">
+                <div class="comment__list-item2">
                     <span class="comment__user-name">{{ $users['name'] }}</span>
                 </div>
             </div>
             <div class="comment__list-comment">
                 <p class="comment__list-comment-item">{{ $users['comment'] }}</p>
             </div>
-            @if ($users['id'] == $own['id'])
+            @if ($users['id'] == $own['id'] || !empty($permission) )
             <div class="comment__delete">
                 <form action="?" method="post">
                 @csrf

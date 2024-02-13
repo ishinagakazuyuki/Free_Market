@@ -91,6 +91,11 @@
     margin: auto 0;
 }
 
+.comment__list-item2 {
+    width: 50%;
+    margin: auto 0;
+}
+
 .comment__user-image {
     width: 70%;
     border-radius: 30px;

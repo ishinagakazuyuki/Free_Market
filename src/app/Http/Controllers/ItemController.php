@@ -9,6 +9,7 @@ use App\Models\item;
 use App\Models\mylist;
 use App\Models\comment;
 use App\Models\profile;
+use App\Models\permission;
 
 use App\Http\Requests\SaleRequest;
 use App\Http\Requests\CommentRequest;
@@ -138,13 +139,14 @@ class ItemController extends Controller
         $favorite = mylist::where('items_id','=',$request['id'])->count();
         $comment = comment::where('items_id','=',$request['id'])->count();
         $user = profile::join('comments','profiles.user_id','comments.user_id')->where('items_id','=',$request['id'])->get();
-        return view('comment' , compact('menu_flg','own','item','brand','category','condition','favorite','comment','user'));
+        $permission = permission::where('user_id','=',$own['id'])->first();
+        return view('comment' , compact('menu_flg','own','item','brand','category','condition','favorite','comment','user','permission'));
     }
     public function post(CommentRequest $request){
         $menu_flg = "1";
-        $user = Auth::user();
+        $own = Auth::user();
         $post = [
-            'user_id' => $user['id'],
+            'user_id' => $own['id'],
             'items_id' => $request['id'],
             'comment' => $request['comment'],
         ];
@@ -156,15 +158,16 @@ class ItemController extends Controller
         $favorite = mylist::where('items_id','=',$request['id'])->count();
         $comment = comment::where('items_id','=',$request['id'])->count();
         $user = profile::join('comments','profiles.user_id','comments.user_id')->where('items_id','=',$request['id'])->get();
-        return view('comment' , compact('menu_flg','item','brand','category','condition','favorite','comment','user'));
+        $permission = permission::where('user_id','=',$own['id'])->first();
+        return view('comment' , compact('menu_flg','own','item','brand','category','condition','favorite','comment','user','permission'));
     }
     public function comment_favorite(Request $request){
         $menu_flg = "1";
-        $user = Auth::user();
+        $own = Auth::user();
         $favorite = mylist::where('user_id','=',$user['id'])->where('items_id','=',$request['id'])->first();
         if (empty($favorite)){
             $favorites = [
-                'user_id' => $user['id'],
+                'user_id' => $own['id'],
                 'items_id' => $request['id'],
             ];
             mylist::create($favorites);
@@ -178,10 +181,12 @@ class ItemController extends Controller
         $favorite = mylist::where('items_id','=',$request['id'])->count();
         $comment = comment::where('items_id','=',$request['id'])->count();
         $user = profile::join('comments','profiles.user_id','comments.user_id')->where('items_id','=',$request['id'])->get();
-        return view('comment' , compact('menu_flg','item','brand','category','condition','favorite','comment','user'));
+        $permission = permission::where('user_id','=',$own['id'])->first();
+        return view('comment' , compact('menu_flg','own','item','brand','category','condition','favorite','comment','user','permission'));
     }
     public function comment_delete(Request $request){
         $menu_flg = "1";
+        $own = Auth::user();
         $delete = comment::where('id','=',$request['comment_id'])->first();
         $delete->delete();
         $item = item::where('id','=',$request['id'])->first();
@@ -191,7 +196,8 @@ class ItemController extends Controller
         $favorite = mylist::where('items_id','=',$request['id'])->count();
         $comment = comment::where('items_id','=',$request['id'])->count();
         $user = profile::join('comments','profiles.user_id','comments.user_id')->where('items_id','=',$request['id'])->get();
-        return view('comment' , compact('menu_flg','item','brand','category','condition','favorite','comment','user'));
+        $permission = permission::where('user_id','=',$own['id'])->first();
+        return view('comment' , compact('menu_flg','own','item','brand','category','condition','favorite','comment','user','permission'));
     }
 }
 
