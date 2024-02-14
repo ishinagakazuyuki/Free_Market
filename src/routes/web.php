@@ -43,3 +43,4 @@ Route::get('/cancel/{buyer_id}', [PurchaseController::class, 'cancel']);
 
 Route::get('/manage', [ManageController::class, 'manage']);
 Route::post('/manage/delete', [ManageController::class, 'delete']);
+Route::post('/manage/send', [ManageController::class, 'send']);

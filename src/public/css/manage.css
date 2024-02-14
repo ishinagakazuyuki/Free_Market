@@ -1,6 +1,6 @@
 .manage {
-    width: 60%;
-    margin: 100px auto;
+    width: 100%;
+    margin-top: 100px;
 }
 
 .manage__title {
@@ -10,10 +10,22 @@
     margin-bottom: 50px;
 }
 
+.manage__main {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.manage__right {
+    width: 45%;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
 .manage__header {
     display: flex;
     border-bottom: solid 2px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -29,7 +41,7 @@
     border-bottom: solid 1px;
     margin-bottom: 20px;
     height: 50px;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .manage-form {
@@ -46,4 +58,39 @@
     border: none;
     border-radius: 5px;
     margin: auto 0;
+}
+
+.manage__left {
+    width: 45%;
+}
+
+.manage__mail-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.manage__mail-form {
+    margin-top: 30px;
+}
+
+.manage__mail-label {
+    font-size: 18px;
+}
+
+.manage__mail-input {
+    width: 80%;
+}
+
+.manage__mail-textarea {
+    width: 80%;
+}
+
+.manage__mail-button {
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
 }
