@@ -80,7 +80,7 @@ class ItemController extends Controller
         $currentDate = date('YmdHis');
         $file = $request->file('image');
         $filename = $user['id'] . "_" . $currentDate . "." . $file->getClientOriginalExtension();
-        $path = $file->storeAs('images', $filename, 'public');
+        $path = Storage::disk('local')->putFileAs('public/images', $file, $filename);
         $items = [
             'user_id' => $user['id'],
             'name' => $request['name'],

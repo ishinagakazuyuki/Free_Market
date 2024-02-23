@@ -52,7 +52,7 @@ class MypageController extends Controller
             } else {
                 $file = $request->file('image');
                 $filename = $user['id'] . "." . $file->getClientOriginalExtension();
-                $path = $file->storeAs('images', $filename, 'public');
+                $path = Storage::disk('local')->putFileAs('public/images', $file, $filename);
                 $profiles = [
                     'user_id' => $user['id'],
                     'name' => $request['name'],
@@ -74,7 +74,7 @@ class MypageController extends Controller
             } else {
                 $file = $request->file('image');
                 $filename = $user['id'] . "." . $file->getClientOriginalExtension();
-                $path = $file->storeAs('images', $filename, 'public');
+                $path = Storage::disk('local')->putFileAs('public/images', $file, $filename);
                 profile::where('user_id','=',$user['id'])->first()->update([
                     'name' => $request['name'],
                     'post_code' => $request['post_code'],
