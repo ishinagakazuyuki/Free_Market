@@ -1,5 +1,6 @@
+<!DOCTYPE html>
+<html lang="ja">
 <?php
-
 use App\Models\buyer;
 $buyer = buyer::create([
     'user_id' => $user_id,
@@ -46,3 +47,4 @@ buyer::where('id','=',$buyer_id)->update([
 header("HTTP/1.1 303 See Other");
 header("Location: " . $checkout_session->url);
 ?>
+</html>
