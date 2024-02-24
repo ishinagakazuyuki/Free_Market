@@ -110,7 +110,7 @@ class ItemController extends Controller
         $item = item::where('id','=',$request['id'])->first();
         $brand = brand::where('id','=',$item['brands_id'])->first();
         $category = category::where('id','=',$item['categories_id'])->first();
-        $condition = condition::where('id','=',$item['categories_id'])->first();
+        $condition = condition::where('id','=',$item['conditions_id'])->first();
         $favorite = mylist::where('items_id','=',$request['id'])->count();
         $comment = comment::where('items_id','=',$request['id'])->count();
         return view('detail' , compact('menu_flg','item','brand','category','condition','favorite','comment'));
