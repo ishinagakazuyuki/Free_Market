@@ -18,51 +18,77 @@ class MypageController extends Controller
         $menu_flg = "1";
         $user = Auth::user();
         $profile = profile::where('user_id','=',$user['id'])->first();
+        $env = env('APP_ENV');
+        if($env == 'local') {
+            if(!empty($profile['image'])){
+                $url = $profile['image'];
+            }else{
+                $path = 'storage/images/default.jpg';
+                $url = asset($path);
+            }
+        }else {
+            if(!empty($profile['image'])){
+                $url = $profile['image'];
+            }else{
+                $path = 'public/images/default.jpg';
+                $url = Storage::disk('s3')->url($path);
+            }
+        }
         $item = item::where('user_id','=',$user['id'])->orderBy('items.id', 'desc')->get();
         $buy = buyer::join('items','buyers.items_id','items.id')->where('buyers.user_id','=',$user['id'])->where('buyers.pay_flg','=',0)
             ->orderBy('buyers.id', 'desc')->get();
-        return view('mypage' , compact('menu_flg','profile','item','buy'));
+        return view('mypage' , compact('menu_flg','profile','url','item','buy'));
     }
     public function profile(Request $request){
         $menu_flg = "1";
         $user = Auth::user();
         $profile = profile::where('user_id','=',$user['id'])->first();
-        return view('profile' , compact('menu_flg','profile'));
+        $env = env('APP_ENV');
+        if($env == 'local') {
+            if(!empty($profile['image'])){
+                $url = $profile['image'];
+            }else{
+                $path = 'storage/images/default.jpg';
+                $url = asset($path);
+            }
+        }else {
+            if(!empty($profile['image'])){
+                $url = $profile['image'];
+            }else{
+                $path = 'public/images/default.jpg';
+                $url = Storage::disk('s3')->url($path);
+            }
+        }
+        return view('profile' , compact('menu_flg','profile','url'));
     }
     public function update(ProfileRequest $request){
         $menu_flg = "1";
         $user = Auth::user();
-        if (empty($request['image'])) {
-            $filename = null;
-        } else {
-            $file = $request->file('image');
-            $filename = $user['id'] . "." . $file->getClientOriginalExtension();
-        }
         $profile = profile::where('user_id','=',$user['id'])->first();
+        $env = env('APP_ENV');
         if (empty($profile)){
             if (empty($request['image'])) {
-                $profiles = [
-                    'user_id' => $user['id'],
-                    'name' => $request['name'],
-                    'post_code' => $request['post_code'],
-                    'address' => $request['address'],
-                    'building' => $request['building'],
-                ];
-                profile::create($profiles);
+                $url = null;
             } else {
                 $file = $request->file('image');
                 $filename = $user['id'] . "." . $file->getClientOriginalExtension();
-                $path = Storage::disk('local')->putFileAs('public/images', $file, $filename);
-                $profiles = [
-                    'user_id' => $user['id'],
-                    'name' => $request['name'],
-                    'post_code' => $request['post_code'],
-                    'address' => $request['address'],
-                    'building' => $request['building'],
-                    'image' => $filename,
-                ];
-                profile::create($profiles);
+                if($env == 'local') {
+                    $path = Storage::disk('local')->putFileAs('public/images', $file, $filename);
+                    $url = asset('storage/images/'.$profile['image']);
+                } else {
+                    $path = Storage::disk('s3')->putFileAs('public/images', $file, $filename);
+                    $url = Storage::disk('s3')->url($path);
+                }
             }
+            $profiles = [
+                'user_id' => $user['id'],
+                'name' => $request['name'],
+                'post_code' => $request['post_code'],
+                'address' => $request['address'],
+                'building' => $request['building'],
+                'image' => $url,
+            ];
+            profile::create($profiles);
         } else {
             if (empty($request['image'])) {
                 profile::where('user_id','=',$user['id'])->first()->update([
@@ -74,17 +100,39 @@ class MypageController extends Controller
             } else {
                 $file = $request->file('image');
                 $filename = $user['id'] . "." . $file->getClientOriginalExtension();
-                $path = Storage::disk('local')->putFileAs('public/images', $file, $filename);
+                if($env == 'local') {
+                    $path = Storage::disk('local')->putFileAs('public/images', $file, $filename);
+                    $url = asset('storage/images/'.$filename);
+                } else {
+                    $path = Storage::disk('s3')->putFileAs('public/images', $file, $filename);
+                    $url = Storage::disk('s3')->url($path);
+                }
                 profile::where('user_id','=',$user['id'])->first()->update([
                     'name' => $request['name'],
                     'post_code' => $request['post_code'],
                     'address' => $request['address'],
                     'building' => $request['building'],
-                    'image' => $filename,
+                    'image' => $url,
                 ]);
             }
         }
         $profile = profile::where('user_id','=',$user['id'])->first();
-        return view('profile' , compact('menu_flg','profile'));
+        $url = $profile['image'];
+        if($env == 'local') {
+            if(!empty($profile['image'])){
+                $url = $profile['image'];
+            }else{
+                $path = 'storage/images/default.jpg';
+                $url = asset($path);
+            }
+        }else {
+            if(!empty($profile['image'])){
+                $url = $profile['image'];
+            }else{
+                $path = 'public/images/default.jpg';
+                $url = Storage::disk('s3')->url($path);
+            }
+        }
+        return view('profile' , compact('menu_flg','profile','url'));
     }
 }

@@ -80,7 +80,14 @@ class ItemController extends Controller
         $currentDate = date('YmdHis');
         $file = $request->file('image');
         $filename = $user['id'] . "_" . $currentDate . "." . $file->getClientOriginalExtension();
-        $path = Storage::disk('local')->putFileAs('public/images', $file, $filename);
+        $env = env('APP_ENV');
+        if($env == 'local') {
+            $path = Storage::disk('local')->putFileAs('public/images', $file, $filename);
+            $url = asset('storage/images/'.$filename);
+        } else {
+            $path = Storage::disk('s3')->putFileAs('public/images', $file, $filename);
+            $url = Storage::disk('s3')->url($path);
+        }
         $items = [
             'user_id' => $user['id'],
             'name' => $request['name'],
@@ -89,7 +96,7 @@ class ItemController extends Controller
             'categories_id' => $categories_id,
             'conditions_id' => $conditions_id,
             'value' => $request['value'],
-            'image' => $filename,
+            'image' => $url,
         ];
         item::create($items);
         $menu_flg = "1";

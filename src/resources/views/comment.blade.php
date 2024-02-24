@@ -7,7 +7,7 @@
 @section('content')
 <div class="comment">
     <div class="comment__image">
-        <img class="comment__image-item" src="{{ asset('storage/images/'.$item['image']) }}" alt="">
+        <img class="comment__image-item" src="{{ $item['image'] }}" alt="">
     </div>
     <div class="comment__main">
         <div class="comment__title">
@@ -42,7 +42,7 @@
             @foreach($user as $users)
             <div class="comment__list-user {{ $users->user_id === Auth::user()->id ? 'left-margin' : '' }}">
                 <div class="comment__list-item">
-                    <img class="comment__user-image" src="{{ asset('storage/images/'.$users['image']) }}" alt="">
+                    <img class="comment__user-image" src="{{ $users['image'] }}" alt="">
                 </div>
                 <div class="comment__list-item2">
                     <span class="comment__user-name">{{ $users['name'] }}</span>

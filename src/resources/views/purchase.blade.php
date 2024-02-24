@@ -9,7 +9,7 @@
     <div class="purchase__left">
         <div class="purchase__left-top">
             <div class="purchase__left-left">
-                <img class="purchase__left-img" src="{{ asset('storage/images/'.$item['image']) }}">
+                <img class="purchase__left-img" src="{{ $item['image'] }}">
             </div>
             <div class="purchase__left-right">
                 <p class="purchase__left-name">{{ $item['name'] }}</p>

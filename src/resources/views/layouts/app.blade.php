@@ -7,6 +7,9 @@
     height: 20px;
     }
 </style>
+<?php
+$env = env('APP_ENV');
+?>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,8 +24,13 @@
 <body class="body">
   <header class="header">
     <div class="header__logo">
+      @if($env == 'local')
       <img class="header__logo-left" src="{{ asset('storage/images/logo_img.svg') }}" alt="">
       <img class="header__logo-right" src="{{ asset('storage/images/coachtech_img.png') }}" alt="">
+      @else
+      <img class="header__logo-left" src="https://ishikazu.s3.ap-northeast-1.amazonaws.com/public/images//logo_img.svg" alt="">
+      <img class="header__logo-right" src="https://ishikazu.s3.ap-northeast-1.amazonaws.com/public/images/coachtech_img.png" alt="">
+      @endif
     </div>
     @if ($menu_flg == '1')
     <div class="header__search">

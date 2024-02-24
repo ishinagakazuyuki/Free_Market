@@ -9,11 +9,7 @@
 <div class="mypage">
     <div class="mypage_top">
         <div class="mypage_top-image">
-            @if(!empty($profile['image']))
-            <img class="mypage_top-image-item" src="{{ asset('storage/images/'.$profile['image']) }}" alt="">
-            @else
-            <img class="mypage_top-image-item" src="{{ asset('storage/images/default.jpg') }}" alt="">
-            @endif
+            <img class="mypage_top-image-item" src="{{ $url }}" alt="">
         </div>
         <div class="mypage_top-name">
             <span class="mypage_top-name-item">{{ $profile['name'] ?? '名前を設定してください' }}</span>
@@ -36,7 +32,7 @@
                 <form action="?" method="get">
                     <button class="tab-content-button" type="submit" value="get" formaction="{{ route('detail',['item_id' => $items['id'] ]) }}">
                     <input type="hidden" name="id" value="{{ $items['id'] }}"/>
-                        <img src="{{ asset('storage/images/'.$items['image']) }}"  class="tab-content-image">
+                        <img src="{{ $items['image'] }}"  class="tab-content-image">
                     </button>
                 </form>
             </div>
@@ -48,7 +44,7 @@
                 <form action="?" method="get">
                     <button class="tab-content-button" type="submit" value="get" formaction="{{ route('detail',['item_id' => $buys['items_id'] ]) }}">
                     <input type="hidden" name="id" value="{{ $buys['items_id'] }}"/>
-                        <img src="{{ asset('storage/images/'.$buys['image']) }}"  class="tab-content-image">
+                        <img src="{{ $items['image'] }}"  class="tab-content-image">
                     </button>
                 </form>
             </div>

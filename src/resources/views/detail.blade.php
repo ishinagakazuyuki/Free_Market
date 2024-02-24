@@ -7,7 +7,7 @@
 @section('content')
 <div class="detail">
     <div class="detail__image">
-        <img class="detail__image-item" src="{{ asset('storage/images/'.$item['image']) }}" alt="">
+        <img class="detail__image-item" src="{{ $item['image'] }}" alt="">
     </div>
     <div class="detail__main">
         <div class="detail__title">
