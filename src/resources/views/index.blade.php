@@ -29,7 +29,6 @@
             @endforeach
             <?php $number = $count % 5; ?>
             <div class="tab-box{{ $number }}"></div>
-            @endif
         </div>
         <div id="tab2" class="tab-content" style="display: none;">
             @if ($mylist === null)
