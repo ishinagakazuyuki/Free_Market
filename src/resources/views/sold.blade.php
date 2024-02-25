@@ -10,7 +10,16 @@ $buyer = buyer::create([
     'session_id' => 1,
     'pay_flg' => 1,
 ]);
+
 $buyer_id = $buyer->id;
+$env = env('APP_ENV');
+if($env == 'local') {
+    $success = "http://localhost/success/";
+    $cancel = "http://localhost/cancel/". $buyer_id;
+} else {
+    $success = "http://44.215.158.167/success/";
+    $cancel = "http://44.215.158.167/cancel/". $buyer_id;
+}
 
 $stripe = new \Stripe\StripeClient(config('stripe.stripe_secret_key'));
 $checkout_session = $stripe->checkout->sessions->create([
@@ -36,15 +45,16 @@ $checkout_session = $stripe->checkout->sessions->create([
         'quantity' => 1,
     ]],
     'mode' => 'payment',
-    'success_url' => "http://localhost/success/",
-    'cancel_url' => "http://localhost/cancel/". $buyer_id,
+    'success_url' => $success,
+    'cancel_url' => $cancel,
 ]);
 
 buyer::where('id','=',$buyer_id)->update([
     'session_id' => $checkout_session['id'],
 ]);
 
+$url = $checkout_session->url;
 header("HTTP/1.1 303 See Other");
-header("Location: " . $checkout_session->url);
+header("Location: " . $url);
 ?>
 </html>
