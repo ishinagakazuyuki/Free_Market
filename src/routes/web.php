@@ -38,7 +38,7 @@ Route::get('/purchase/address/{item_id}', [PurchaseController::class, 'address']
 Route::post('/purchase/address/{item_id}', [PurchaseController::class, 'address_update'])->name('purchase.address_update');
 
 Route::get('/sold', [PurchaseController::class, 'sold']);
-Route::get('/success/{item_id}/{method}', [PurchaseController::class, 'success']);
+Route::get('/success', [PurchaseController::class, 'success']);
 Route::get('/cancel/{buyer_id}', [PurchaseController::class, 'cancel']);
 
 Route::get('/manage', [ManageController::class, 'manage']);
