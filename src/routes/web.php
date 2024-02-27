@@ -18,6 +18,7 @@ use App\Http\Controllers\ManageController;
 */
 
 Route::get('/', [ItemController::class, 'index']);
+Route::post('/search', [ItemController::class, 'search']);
 Route::get('/sell', [ItemController::class, 'sell']);
 Route::post('/sell', [ItemController::class, 'sale']);
 Route::get('/detail/{item_id}', [ItemController::class, 'detail'])->name('detail');

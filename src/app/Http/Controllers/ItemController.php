@@ -37,6 +37,23 @@ class ItemController extends Controller
         }
         return view('index' , compact('menu_flg','item','mylist'));
     }
+    public function search(Request $request){
+        $menu_flg = "1";
+        $search = $request['search'];
+        $item = item::join('brands','items.brands_id','brands.id')->join('categories','items.categories_id','categories.id')
+            ->where(function($query) use ($search) {
+                $query->Where('items.name', 'like', '%'.$search.'%')->orWhere('brands.brand_name', 'like', '%'.$search.'%')
+                ->orWhere('categories.first', 'like', '%'.$search.'%')->orWhere('categories.second', 'like', '%'.$search.'%');
+        })->orderBy('items.id', 'desc')->select('items.*', 'brands.brand_name', 'categories.first', 'categories.second')->get();
+        $count = $item->count();
+        if ($count == 0){
+            $message = $search."の検索結果はありません";
+            $item = null;
+        } else {
+            $message = $search."を検索した結果、".$count."件がヒットしました";
+        }
+        return view('search' , compact('menu_flg','item','message'));
+    }
     public function sell(Request $request){
         $menu_flg = "1";
         $brand = brand::get();

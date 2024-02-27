@@ -2,7 +2,6 @@
 <html lang="ja">
 <style>
     svg.w-5.h-5 {
-    /*paginateメソッドの矢印の大きさ調整のために追加*/
     width: 30px;
     height: 20px;
     }
@@ -28,13 +27,16 @@ $env = env('APP_ENV');
       <img class="header__logo-left" src="{{ asset('storage/images/logo_img.svg') }}" alt="">
       <img class="header__logo-right" src="{{ asset('storage/images/coachtech_img.png') }}" alt="">
       @else
-      <img class="header__logo-left" src="https://ishikazu.s3.ap-northeast-1.amazonaws.com/public/images//logo_img.svg" alt="">
+      <img class="header__logo-left" src="https://ishikazu.s3.ap-northeast-1.amazonaws.com/public/images/logo_img.svg" alt="">
       <img class="header__logo-right" src="https://ishikazu.s3.ap-northeast-1.amazonaws.com/public/images/coachtech_img.png" alt="">
       @endif
     </div>
     @if ($menu_flg == '1')
     <div class="header__search">
-      <input class="header__search-item" type="text" placeholder=" なにをお探しですか？">
+      <form action="/search" method="post">
+      @csrf
+        <input name="search" class="header__search-item" type="text" placeholder=" なにをお探しですか？">
+      </form>
     </div>
     @if (Auth::check())
     <div class="header__logout">
