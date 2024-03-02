@@ -11,6 +11,9 @@
     </div>
     <div class="manage__main">
         <div class="manage__right">
+            <div class="manage__right-title">
+                <span>ユーザーリスト</span>
+            </div>
             <div class="manage__header" >
                 <span class="manage__header-item">ユーザ名</span>
                 <span class="manage__header-item">メールアドレス</span>
@@ -40,7 +43,7 @@
                 <span class="error">{{$errors->first('title')}}</span><br>
                 <label class="manage__mail-label" for="">メールアドレス</label><br>
                 <input class="manage__mail-input" type="text" name="address" value=""><br>
-                <span>※未入力の場合は利用者全員にメールが送信されます</span><br>
+                <span class="manage__mail-supplement" >※未入力の場合は利用者全員にメールが送信されます</span><br>
                 <label class="manage__mail-label" for="">メール本文</label><br>
                 <textarea class="manage__mail-textarea" name="text" id="" cols="30" rows="10"></textarea><br>
                 <span class="error">{{$errors->first('text')}}</span>

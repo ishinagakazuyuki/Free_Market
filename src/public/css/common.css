@@ -23,6 +23,7 @@
 }
 
 .header__search-item {
+    font-size: 18px;
     width: 90%;
     padding: 7px;
 }
@@ -75,7 +76,7 @@
 }
 
 .header__sell-item {
-    width: 100%;
+    font-size: 20px;
     background-color: white;
     border-radius: 5px;
     padding: 10px 25px;
@@ -89,4 +90,74 @@
 
 .error {
     color: red;
+}
+
+@media screen and (max-width: 1000px) {
+    .header__search-item {
+        font-size: 15px;
+    }
+
+    .header__login-item {
+        font-size: 18px;
+    }
+
+    .header__register-item {
+        font-size: 18px;
+    }
+
+    .header__logout-item {
+        font-size: 17px;
+    }
+
+    .header__mypage-item {
+        font-size: 17px;
+    }
+
+    .header__sell-item {
+        font-size: 18px;
+        padding: 8px 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header__logo {
+        width: 25%;
+    }
+
+    .header__search {
+        width: 35%;
+    }
+
+    .header__search-item {
+        font-size: 12px;
+    }
+
+    .header__login-item {
+        font-size: 15px;
+    }
+
+    .header__register-item {
+        font-size: 15px;
+    }
+
+    .header__logout {
+        width: 11%;
+    }
+
+    .header__logout-item {
+        font-size: 14px;
+    }
+
+    .header__mypage {
+        width: 11%;
+    }
+
+    .header__mypage-item {
+        font-size: 14px;
+    }
+
+    .header__sell-item {
+        font-size: 15px;
+        padding: 6px 15px;
+    }
 }

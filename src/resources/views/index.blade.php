@@ -14,7 +14,7 @@
                 <li class="index_main-list"><a href="#" class="index_main-list-item" onclick="showTab('tab2')" data-tab="tab2">マイリスト</a></li>
             </ul>
         </div>
-        <?php $count = 0; ?>
+        <?php $count1 = 0; ?>
         <div id="tab1" class="tab-content">
             @foreach ($item as $items)
             <div class="tab-content-item">
@@ -25,11 +25,12 @@
                     </button>
                 </form>
             </div>
-            <?php $count = $count + 1; ?>
+            <?php $count1 = $count1 + 1; ?>
             @endforeach
-            <?php $number = $count % 5; ?>
-            <div class="tab-box{{ $number }}"></div>
+            <?php $number1 = $count1 % 5; ?>
+            <div class="tab-box{{ $number1 }}"></div>
         </div>
+        <?php $count2 = 0; ?>
         <div id="tab2" class="tab-content" style="display: none;">
             @if ($mylist === null)
             <div></div>
@@ -43,10 +44,10 @@
                     </button>
                 </form>
             </div>
-            <?php $count = $count + 1; ?>
+            <?php $count2 = $count2 + 1; ?>
             @endforeach
-            <?php $number = $count % 5; ?>
-            <div class="tab-box{{ $number }}"></div>
+            <?php $number2 = $count2 % 5; ?>
+            <div class="tab-box{{ $number2 }}"></div>
             @endif
         </div>
     </div>

@@ -25,7 +25,7 @@
                 <li class="mypage_main-list"><a href="#" class="mypage_main-list-item" onclick="showTab('tab2')" data-tab="tab2">購入した商品</a></li>
             </ul>
         </div>
-        <?php $count = 0; ?>
+        <?php $count1 = 0; ?>
         <div id="tab1" class="tab-content">
             @foreach ($item as $items)
             <div class="tab-content-item">
@@ -36,8 +36,12 @@
                     </button>
                 </form>
             </div>
+            <?php $count1 = $count1 + 1; ?>
             @endforeach
+            <?php $number1 = $count1 % 4; ?>
+            <div class="tab-box{{ $number1 }}"></div>
         </div>
+        <?php $count2 = 0; ?>
         <div id="tab2" class="tab-content" style="display: none;">
             @foreach ($buy as $buys)
             <div class="tab-content-item">
@@ -48,10 +52,10 @@
                     </button>
                 </form>
             </div>
-            <?php $count = $count + 1; ?>
+            <?php $count2 = $count2 + 1; ?>
             @endforeach
-            <?php $number = $count % 4; ?>
-            <div class="tab-box{{ $number }}"></div>
+            <?php $number2 = $count2 % 4; ?>
+            <div class="tab-box{{ $number2 }}"></div>
         </div>
     </div>
 </div>

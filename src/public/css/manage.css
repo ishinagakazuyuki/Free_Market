@@ -7,7 +7,7 @@
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .manage__main {
@@ -20,6 +20,12 @@
     width: 45%;
     margin-left: 50px;
     margin-right: 50px;
+}
+
+.manage__right-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 50px;
 }
 
 .manage__header {
@@ -81,6 +87,10 @@
     width: 80%;
 }
 
+.manage__mail-supplement {
+    font-size: 13px;
+}
+
 .manage__mail-textarea {
     width: 80%;
 }
@@ -93,4 +103,78 @@
     border: none;
     border-radius: 10px;
     padding: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+    .manage__header {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .manage__header-item {
+        width: 35%;
+    }
+
+    .manage__content {
+        font-size: 12px;
+    }
+
+    .manage-form {
+        width: 30%;
+        margin-left: 15px;
+    }
+
+    .manage__mail-title {
+        font-size: 18px;
+    }
+
+    .manage__mail-label {
+        font-size: 15px;
+    }
+
+    .manage__mail-supplement {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .manage {
+        margin-top: 50px;
+    }
+
+    .manage__right {
+        width: 50%;
+        margin-left: 20px;
+        margin-right: 15px;
+    }
+
+    .manage__header {
+        font-size: 13px;
+    }
+
+    .manage__header-item {
+        width: 45%;
+    }
+
+    .manage-form {
+        width: 25%;
+    }
+
+    .manage-form__button-submit {
+        width: 80%;
+        margin: 8px auto;
+    }
+
+    .manage__mail-label {
+        font-size: 14px;
+    }
+
+    .manage__mail-input {
+        width: 90%;
+    }
+
+    .manage__mail-textarea {
+        width: 90%;
+        height: 200px;
+    }
 }

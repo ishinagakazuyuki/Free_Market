@@ -3,6 +3,7 @@
     margin: 100px;
     display: flex;
 }
+
 .mypage_top-image {
     margin-left: 100px;
 }
@@ -103,4 +104,77 @@
     display: block;
     content: "";
     width: 23%;
+}
+
+@media screen and (max-width: 1000px) {
+    .mypage_top {
+        margin: 50px 0;
+    }
+
+    .mypage_main-tab {
+        width: 40%;
+        margin-left: 50px;
+    }
+
+    .tab-content {
+        margin: 35px 20px;
+        padding: 0 5% 0 5%;
+    }
+
+    .tab-content-item {
+        margin-bottom: 30px;
+    }
+
+    .tab-content-button {
+        width: 95%;
+    }
+
+    .tab-content-image {
+        height: 130px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mypage_top {
+            margin: 35px 0;
+    }
+
+    .mypage_top-image {
+        margin-left: 60px;
+    }
+
+    .mypage_top-image-item {
+        height: 90px;
+    }
+
+    .mypage_top-name-item {
+        font-size: 25px;
+    }
+
+    .mypage_main-tab {
+        width: 50%;
+        margin-left: 30px;
+    }
+
+    .mypage_main-list {
+        font-size: 18px;
+        margin-right: 50px;
+    }
+
+    .tab-content {
+        margin: 35px 20px;
+        padding: 0 5% 0 5%;
+    }
+
+    .tab-content-item {
+        margin-bottom: 30px;
+    }
+
+    .tab-content-button {
+        width: 95%;
+    }
+
+    .tab-content-image {
+        height: 130px;
+    }
 }

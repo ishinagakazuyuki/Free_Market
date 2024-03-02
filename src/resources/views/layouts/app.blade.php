@@ -25,10 +25,14 @@ $env = env('APP_ENV');
     <div class="header__logo">
       @if($env == 'local')
       <img class="header__logo-left" src="{{ asset('storage/images/logo_img.svg') }}" alt="">
-      <img class="header__logo-right" src="{{ asset('storage/images/coachtech_img.png') }}" alt="">
+      <a href="/">
+        <img class="header__logo-right" src="{{ asset('storage/images/coachtech_img.png') }}" alt="">
+      </a>
       @else
       <img class="header__logo-left" src="https://ishikazu.s3.ap-northeast-1.amazonaws.com/public/images/logo_img.svg" alt="">
-      <img class="header__logo-right" src="https://ishikazu.s3.ap-northeast-1.amazonaws.com/public/images/coachtech_img.png" alt="">
+      <a href="/">
+        <img class="header__logo-right" src="https://ishikazu.s3.ap-northeast-1.amazonaws.com/public/images/coachtech_img.png" alt="">
+      </a>
       @endif
     </div>
     @if ($menu_flg == '1')

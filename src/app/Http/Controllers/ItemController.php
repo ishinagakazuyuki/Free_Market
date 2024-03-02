@@ -46,11 +46,15 @@ class ItemController extends Controller
                 ->orWhere('categories.first', 'like', '%'.$search.'%')->orWhere('categories.second', 'like', '%'.$search.'%');
         })->orderBy('items.id', 'desc')->select('items.*', 'brands.brand_name', 'categories.first', 'categories.second')->get();
         $count = $item->count();
-        if ($count == 0){
-            $message = $search."の検索結果はありません";
-            $item = null;
+        if (empty($search)) {
+            $message = "全件検索を行いました";
         } else {
-            $message = $search."を検索した結果、".$count."件がヒットしました";
+            if ($count == 0){
+                $message = $search."の検索結果はありません";
+                $item = null;
+            } else {
+                $message = $search."を検索した結果、".$count."件がヒットしました";
+            }
         }
         return view('search' , compact('menu_flg','item','message'));
     }

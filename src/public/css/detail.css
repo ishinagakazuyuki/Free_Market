@@ -130,3 +130,50 @@
     font-weight: bold;
     margin-right: 80px;
 }
+
+@media screen and (max-width: 1000px) {
+    .detail__image {
+        width: 40%;
+        margin: 120px 25px 0 70px;
+    }
+
+    .detail__name {
+        font-size: 35px;
+    }
+
+    .detail__value-item {
+        font-size: 30px;
+    }
+
+    .detail__buy {
+        margin-bottom: 20px;
+    }
+
+    .detail__description-title {
+        font-size: 30px;
+    }
+
+    .detail__description-item {
+        width: 75%;
+        height: 80px;
+        font-size: 15px;
+    }
+
+    .detail__info-title {
+        font-size: 30px;
+    }
+
+    .detail__info-category-item2 {
+        width: 15%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .detail__description-item {
+        width: 80%;
+    }
+
+    .detail__info-category-item2 {
+        width: 20%;
+    }
+}

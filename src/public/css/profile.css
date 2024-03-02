@@ -58,3 +58,29 @@
     border: none;
     border-radius: 5px;
 }
+
+@media screen and (max-width: 1000px) {
+    .profile {
+        width: 45%;
+        margin: 60px auto;
+    }
+
+    .profile__title {
+        margin-bottom: 35px;
+    }
+
+    .profile-form__img {
+        width: 20%;
+        height: 90px;
+    }
+
+    .profile-form__img-label {
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .profile {
+        width: 60%;
+    }
+}

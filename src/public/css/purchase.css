@@ -118,3 +118,158 @@
     border-radius: 10px;
     padding: 10px 0;
 }
+
+@media screen and (max-width: 1000px) {
+    .purchase {
+        margin: 60px;
+    }
+
+    .purchase__left {
+        width: 50%;
+        margin-right: 55px;
+    }
+
+    .purchase__left-top {
+        margin-bottom: 40px;
+    }
+
+    .purchase__left-img {
+        height: 150px;
+    }
+
+    .purchase__left-name {
+        font-size: 25px;
+        margin-bottom: 40px;
+    }
+
+    .purchase__left-value {
+        font-size: 25px;
+    }
+
+    .purchase__left-middle {
+        margin-bottom: 25px;
+    }
+
+    .purchase__left-title {
+        font-size: 25px;
+    }
+
+    .purchase__left-payment {
+        font-size: 18px;
+        margin-bottom: 70px;
+    }
+
+    .purchase__left-bottom {
+        margin-bottom: 25px;
+    }
+
+    .purchase__left-address {
+        font-size: 18px;
+    }
+
+    .purchase__right {
+        width: 45%;
+    }
+
+    .purchase__right-info {
+        height: 300px;
+        margin-bottom: 60px;
+    }
+
+    .purchase__right-top {
+        margin: 50px 0 90px 30px;
+        font-size: 18px;
+    }
+
+    .purchase__right-item {
+        width: 55%;
+    }
+
+    .purchase__right-middle {
+        margin: 0 0 50px 30px;
+        font-size: 18px;
+    }
+
+    .purchase__right-bottom {
+        margin: 0 0 0 30px;
+        font-size: 18px;
+    }
+
+    .purchase__right-payment {
+        font-size: 14px;
+    }
+    .purchase__button-item {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .purchase {
+        margin: 45px;
+    }
+
+    .purchase__left {
+        margin-right: 50px;
+    }
+
+    .purchase__left-top {
+        margin-bottom: 30px;
+    }
+
+    .purchase__left-img {
+        height: 130px;
+    }
+
+    .purchase__left-name {
+        margin-bottom: 25px;
+    }
+
+    .purchase__left-middle {
+        margin-bottom: 20px;
+    }
+
+    .purchase__left-title {
+        font-size: 20px;
+    }
+
+    .purchase__left-change {
+        font-size: 15px;
+    }
+
+    .purchase__left-payment {
+        font-size: 15px;
+        margin-bottom: 40px;
+    }
+
+    .purchase__left-bottom {
+        margin-bottom: 20px;
+    }
+
+    .purchase__left-address {
+        font-size: 15px;
+    }
+
+    .purchase__right-top {
+        font-size: 15px;
+    }
+
+    .purchase__right-item {
+        width: 50%;
+    }
+
+    .purchase__right-middle {
+        font-size: 15px;
+    }
+
+    .purchase__right-bottom {
+        font-size: 15px;
+    }
+
+    .purchase__right-payment {
+        font-size: 12px;
+    }
+
+    .purchase__button-item {
+        font-size: 18px;
+    }
+}

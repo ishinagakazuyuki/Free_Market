@@ -41,3 +41,17 @@
 .login-here {
     text-align: center;
 }
+
+@media screen and (max-width: 1000px) {
+    .register {
+        width: 40%;
+        margin: 70px auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .register {
+        width: 50%;
+        margin: 50px auto;
+    }
+}

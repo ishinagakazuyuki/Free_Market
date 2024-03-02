@@ -116,7 +116,8 @@
 .comment__list-comment-item {
     border: solid 1px;
     border-radius: 10px;
-    border: none;
+    border: solid 1px;
+    padding: 5px;
 }
 
 .comment__delete {
@@ -147,4 +148,54 @@
     background-color: red;
     color: white;
     padding: 10px 0;
+}
+
+@media screen and (max-width: 1000px) {
+    .comment__image {
+        width: 40%;
+        margin: 120px 25px 0 70px;
+    }
+
+    .comment__name {
+        font-size: 35px;
+    }
+
+    .comment__value-item {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .comment__image {
+        margin: 90px 25px 0 70px;
+    }
+
+    .comment__main {
+        margin-top: 70px;
+    }
+
+    .left-margin {
+        margin-left: 60%;
+    }
+
+    .comment__item {
+        margin-bottom: 30px;
+    }
+
+    .comment__list {
+        margin-bottom: 30px;
+    }
+
+    .comment__list-comment {
+        width: 80%;
+    }
+
+    .comment__delete {
+        width: 80%;
+    }
+
+    .comment__write-comment {
+        width: 80%;
+        height: 170px;
+    }
 }

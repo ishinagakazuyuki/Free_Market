@@ -51,7 +51,7 @@
             <div class="comment__list-comment">
                 <p class="comment__list-comment-item">{{ $users['comment'] }}</p>
             </div>
-            @if ($users['id'] == $own['id'] || !empty($permission) )
+            @if ($users['user_id'] == $own['id'] || !empty($permission) )
             <div class="comment__delete">
                 <form action="?" method="post">
                 @csrf

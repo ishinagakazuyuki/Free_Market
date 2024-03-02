@@ -28,3 +28,27 @@
     border: none;
     border-radius: 5px;
 }
+
+@media screen and (max-width: 1000px) {
+    .payment {
+        width: 35%;
+    }
+
+    .payment__title {
+        font-size: 25px;
+    }
+
+    .payment-form__item {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .payment__title {
+        margin-bottom: 35px;
+    }
+
+    .payment-form__item {
+        margin-bottom: 30px;
+    }
+}

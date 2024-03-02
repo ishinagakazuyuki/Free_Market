@@ -63,7 +63,7 @@
                 </div>
                 <div class="purchase__right-bottom">
                     <span class="purchase__right-item">支払い方法</span>
-                    <span name="payment">{{ $payment }}</span>
+                    <span class="purchase__right-payment" name="payment">{{ $payment }}</span>
                 </div>
             </div>
             <div class="purchase__button">

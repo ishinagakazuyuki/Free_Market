@@ -1,0 +1,31 @@
+.success {
+    width: 35%;
+    margin: 100px auto;
+}
+
+.success__title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+    .success {
+        width: 45%;
+    }
+
+    .success__title {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .success {
+        width: 50%;
+    }
+
+    .success__title {
+        font-size: 22px;
+    }
+}
