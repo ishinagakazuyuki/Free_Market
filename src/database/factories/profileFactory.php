@@ -5,7 +5,6 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Profile;
 use App\Models\User;
-use App\Models\Item;
 
 class ProfileFactory extends Factory
 {
