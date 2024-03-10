@@ -37,11 +37,10 @@ Route::get('/purchase/payment/{item_id}', [PurchaseController::class, 'payment']
 Route::post('/purchase/payment/{item_id}', [PurchaseController::class, 'payment_update'])->name('purchase.payment_update');
 Route::get('/purchase/address/{item_id}', [PurchaseController::class, 'address'])->name('purchase.address');
 Route::post('/purchase/address/{item_id}', [PurchaseController::class, 'address_update'])->name('purchase.address_update');
-
-Route::get('/sold', [PurchaseController::class, 'sold']);
+Route::get('/sold', [PurchaseController::class, 'sold'])->name('sold');
 Route::get('/success', [PurchaseController::class, 'success']);
 Route::get('/cancel/{buyer_id}', [PurchaseController::class, 'cancel']);
 
-Route::get('/manage', [ManageController::class, 'manage']);
+Route::get('/manage', [ManageController::class, 'manage'])->middleware('permission:manage');
 Route::post('/manage/delete', [ManageController::class, 'delete']);
 Route::post('/manage/send', [ManageController::class, 'send']);

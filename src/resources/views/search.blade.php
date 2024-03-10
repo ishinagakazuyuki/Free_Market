@@ -13,6 +13,7 @@
     <div class="search_main">
         <?php $count = 0; ?>
         <div class="tab-content">
+            @if (!empty($item))
             @foreach ($item as $items)
             <div class="tab-content-item">
                 <form action="?" method="get">
@@ -26,6 +27,7 @@
             @endforeach
             <?php $number = $count % 5; ?>
             <div class="tab-box{{ $number }}"></div>
+            @endif
         </div>
     </div>
 </div>

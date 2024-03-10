@@ -140,6 +140,7 @@
 
 .comment__write-comment {
     font-size: 15px;
+    width: 50%;
 }
 
 .comment__write-button {

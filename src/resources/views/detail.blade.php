@@ -39,7 +39,7 @@
         </div>
         <div class="detail__buy" >
             <form action="?" method="get">
-                <button class="detail__buy-button" type="submit" value="get" formaction="{{ route('purchase',['item_id' => $item['id'] ]) }}">
+                <button id="buy" class="detail__buy-button" type="submit" value="get" formaction="{{ route('purchase',['item_id' => $item['id'] ]) }}">
                     購入する
                 </button>
                 <input type="hidden" name="id" value="{{ $item['id'] }}"/>

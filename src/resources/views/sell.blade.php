@@ -28,7 +28,7 @@
             <div class="sell-form__item">
                 <span>カテゴリー</span><br>
                 <select id="category_select" class="sell-form__select" name="category" onchange="showHideInput_category()">
-                    <option value="">選んでね</option>
+                    <option value="">カテゴリを選択してください</option>
                     @foreach($category as $categories)
                     <option value="{{ $categories['id'] }}" {{ old('category') == $categories['id'] ? 'selected' : '' }}>
                         {{ $categories['first'].':'.$categories['second']}}</option>
@@ -48,7 +48,7 @@
             <div class="sell-form__item">
                 <span>商品の状態</span><br>
                 <select id="condition_select" class="sell-form__select" name="condition" onchange="showHideInput_condition()">
-                    <option value="">選んでね</option>
+                    <option value="">商品の状態を選択してください</option>
                     @foreach($condition as $conditions)
                     <option value="{{ $conditions['id'] }}" {{ old('condition') == $conditions['id'] ? 'selected' : '' }}>{{ $conditions['name']}}</option>
                     @endforeach
@@ -72,9 +72,9 @@
             <div class="sell-form__item">
                 <span>ブランド</span><br>
                 <select id="brand_select" class="sell-form__select" name="brand" onchange="showHideInput_brand()">
-                    <option value="">選んでね</option>
+                    <option value="">ブランドを選択してください</option>
                     @foreach($brand as $brands)
-                    <option value="{{ $brands['id'] }}" {{ old('brand') == $brands['id'] ? 'selected' : '' }}>{{ $brands['name']}}</option>
+                    <option value="{{ $brands['id'] }}" {{ old('brand') == $brands['id'] ? 'selected' : '' }}>{{ $brands['brand_name']}}</option>
                     @endforeach
                     <option value="another" {{ old('category') == 'another' ? 'selected' : '' }}>その他</option>
                 </select>

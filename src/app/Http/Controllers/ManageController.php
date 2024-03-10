@@ -32,6 +32,9 @@ class ManageController extends Controller
             $user_id = user::where('email','=',$to)->first();
             $name = profile::where('user_id','=',$user_id['id'])->first();
             $name = $name['name'];
+            if(empty($name)){
+                $name = $to;
+            }
             Mail::send([], [], function($mail) use ($name, $to, $subject, $message) {
                 $mail->to($to)
                     ->subject($subject)

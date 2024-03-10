@@ -192,7 +192,7 @@ class ItemController extends Controller
     public function comment_favorite(Request $request){
         $menu_flg = "1";
         $own = Auth::user();
-        $favorite = mylist::where('user_id','=',$user['id'])->where('items_id','=',$request['id'])->first();
+        $favorite = mylist::where('user_id','=',$own['id'])->where('items_id','=',$request['id'])->first();
         if (empty($favorite)){
             $favorites = [
                 'user_id' => $own['id'],
