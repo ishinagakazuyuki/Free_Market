@@ -34,15 +34,15 @@
 - mailhog
 
 ◇本番環境(AWS)
--　Amazon EC2
-Ubuntu 22.04.3 LTS
-Laravel Framework 8.83.27
-PHP 8.1.2-1ubuntu2.14 (cli) (built: Aug 18 2023 11:41:11) (NTS)
-nginx 1.18.0 (Ubuntu)
-phpMyAdmin 5.1.1deb5ubuntu1
-
+-　Amazon EC2<br>
+Ubuntu 22.04.3 LTS<br>
+Laravel Framework 8.83.27<br>
+PHP 8.1.2-1ubuntu2.14 (cli) (built: Aug 18 2023 11:41:11) (NTS)<br>
+nginx 1.18.0 (Ubuntu)<br>
+phpMyAdmin 5.1.1deb5ubuntu1<br>
+<br>
 - Amazon RDS
-MySQL 8.0.35
+MySQL 8.0.35<br>
  
 - Amazon S3
 - Amazon SES
