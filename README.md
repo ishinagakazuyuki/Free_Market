@@ -1,6 +1,6 @@
 # Free_Market
 
-- ある企業のグループ会社の飲食店予約サービス。
+- ある企業が開発した独自のフリマアプリ。
 
 ![toppage](https://github.com/ishinagakazuyuki/Rese_Develop/assets/135584828/bed870d9-50dc-4c52-81ed-94b2d7905e70)
 
