@@ -2,7 +2,7 @@
 
 - ある企業が開発した独自のフリマアプリ。
 
-![toppage](https://github.com/ishinagakazuyuki/Rese_Develop/assets/135584828/bed870d9-50dc-4c52-81ed-94b2d7905e70)
+![FreeMarket_Top](https://github.com/ishinagakazuyuki/Free_Market/assets/135584828/6452348e-be60-428f-8cdc-c245c86ca3d0)
 
 ## 作成した目的
 
