@@ -17,8 +17,8 @@ if($env == 'local') {
     $success = "http://localhost/success/";
     $cancel = "http://localhost/cancel/". $buyer_id;
 } else {
-    $success = "http://44.215.158.167/success/";
-    $cancel = "http://44.215.158.167/cancel/". $buyer_id;
+    $success = "https://freemarket003.site/success/";
+    $cancel = "https://freemarket003.site/cancel/". $buyer_id;
 }
 
 $stripe = new \Stripe\StripeClient(config('stripe.stripe_secret_key'));
