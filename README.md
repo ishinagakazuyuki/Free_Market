@@ -34,7 +34,7 @@
 - mailhog
 
 ◇本番環境(AWS)
--　Amazon EC2<br>
+-　Amazon EC2
 Ubuntu 22.04.3 LTS<br>
 Laravel Framework 8.83.27<br>
 PHP 8.1.2-1ubuntu2.14 (cli) (built: Aug 18 2023 11:41:11) (NTS)<br>
