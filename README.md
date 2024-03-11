@@ -34,18 +34,18 @@
 - mailhog
 
 ◇本番環境(AWS)
--Amazon EC2
-- Ubuntu 22.04.3 LTS
-- Laravel Framework 8.83.27
-- PHP 8.1.2-1ubuntu2.14 (cli) (built: Aug 18 2023 11:41:11) (NTS)
-- nginx 1.18.0 (Ubuntu)
-- phpMyAdmin 5.1.1deb5ubuntu1
+-　Amazon EC2
+Ubuntu 22.04.3 LTS
+Laravel Framework 8.83.27
+PHP 8.1.2-1ubuntu2.14 (cli) (built: Aug 18 2023 11:41:11) (NTS)
+nginx 1.18.0 (Ubuntu)
+phpMyAdmin 5.1.1deb5ubuntu1
 
--Amazon RDS
-- MySQL 8.0.35
+- Amazon RDS
+MySQL 8.0.35
  
--Amazon S3
--Amazon SES
+- Amazon S3
+- Amazon SES
 ## テーブル設計
 
 ![table drawio](https://github.com/ishinagakazuyuki/Free_Market/assets/135584828/18a0af1a-db32-4160-8ff0-e657a020f56a)
