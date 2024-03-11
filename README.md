@@ -25,10 +25,10 @@
 - 管理者用ページ（店舗代表者登録）
 
 ## 使用技術(実行環境)
-
+◇開発環境
 - Laravel Framework 8.83.27
 - PHP 7.4.9 (cli) (built: Sep  1 2020 02:33:08) ( NTS )
-- MySQL Ver 8.0.26 for Linux on x86_64
+- MySQL 8.0.26
 - nginx 1.21.1
 - phpMyAdmin　5.2.1
 - mailhog
