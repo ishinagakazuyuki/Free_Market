@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\item;
-use App\Models\profile;
-use App\Models\buyer;
+use App\Models\Item;
+use App\Models\Profile;
+use App\Models\Buyer;
 
+use App\Http\Requests\PurchaseRequest;
+use App\Http\Requests\AddressChangeRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Stripe\Exception\ApiErrorException;
-use Stripe\Stripe;
-use Stripe\Checkout\Session;
 
 class PurchaseController extends Controller
 {
@@ -22,6 +21,7 @@ class PurchaseController extends Controller
         $payment = "コンビニ支払い";
         return view('purchase' , compact('menu_flg','item','profile','payment'));
     }
+
     public function payment(Request $request){
         $menu_flg = "1";
         $user = Auth::user();
@@ -29,6 +29,7 @@ class PurchaseController extends Controller
         $profile = profile::where('user_id','=',$user['id'])->first();
         return view('payment' , compact('menu_flg','item','profile'));
     }
+
     public function payment_update(Request $request){
         $menu_flg = "1";
         $user = Auth::user();
@@ -37,6 +38,7 @@ class PurchaseController extends Controller
         $payment = $request['payment'];
         return view('purchase' , compact('menu_flg','item','profile','payment'));
     }
+
     public function address(Request $request){
         $menu_flg = "1";
         $user = Auth::user();
@@ -45,7 +47,8 @@ class PurchaseController extends Controller
         $payment = $request['payment'];
         return view('address' , compact('menu_flg','item','profile','payment'));
     }
-    public function address_update(Request $request){
+
+    public function address_update(AddressChangeRequest $request){
         $menu_flg = "1";
         $user = Auth::user();
         $profile = profile::where('user_id','=',$user['id'])->first();
@@ -70,7 +73,8 @@ class PurchaseController extends Controller
         $payment = $request['payment'];
         return view('purchase' , compact('menu_flg','item','profile','payment'));
     }
-    public function sold(Request $request){
+
+    public function sold(PurchaseRequest $request){
         $menu_flg = "1";
         $user = Auth::user();
         $user_id = $user['id'];
@@ -88,10 +92,12 @@ class PurchaseController extends Controller
         }
         return view('sold', compact('menu_flg','user_id','items_id','name','payment','datetime','value','method'));
     }
+
     public function success(Request $request){
         $menu_flg = "1";
         return view('success', compact('menu_flg'));
     }
+
     public function cancel(Request $request){
         $menu_flg = "1";
         buyer::where('id','=',$request['buyer_id'])->delete();

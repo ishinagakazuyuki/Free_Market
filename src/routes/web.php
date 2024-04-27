@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\ManageController;
@@ -22,11 +24,13 @@ Route::post('/search', [ItemController::class, 'search']);
 Route::get('/sell', [ItemController::class, 'sell']);
 Route::post('/sell', [ItemController::class, 'sale']);
 Route::get('/detail/{item_id}', [ItemController::class, 'detail'])->name('detail');
-Route::post('/favorite', [ItemController::class, 'favorite']);
-Route::get('/comment', [ItemController::class, 'comment']);
-Route::post('/comment', [ItemController::class, 'post']);
-Route::post('/comment/favorite', [ItemController::class, 'comment_favorite']);
-Route::post('/comment/delete', [ItemController::class, 'comment_delete']);
+
+Route::get('/comment', [CommentController::class, 'comment']);
+Route::post('/comment', [CommentController::class, 'post']);
+Route::post('/comment/delete', [CommentController::class, 'comment_delete']);
+
+Route::post('/favorite', [FavoriteController::class, 'favorite']);
+Route::post('/comment/favorite', [FavoriteController::class, 'comment_favorite']);
 
 Route::get('/mypage', [MypageController::class, 'mypage']);
 Route::get('/mypage/profile', [MypageController::class, 'profile']);

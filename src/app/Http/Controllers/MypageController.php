@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\profile;
-use App\Models\item;
-use App\Models\buyer;
+use App\Models\Profile;
+use App\Models\Item;
+use App\Models\Buyer;
 
 use App\Http\Requests\ProfileRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-
 
 class MypageController extends Controller
 {
@@ -39,6 +38,7 @@ class MypageController extends Controller
             ->orderBy('buyers.id', 'desc')->get();
         return view('mypage' , compact('menu_flg','profile','url','item','buy'));
     }
+
     public function profile(Request $request){
         $menu_flg = "1";
         $user = Auth::user();
@@ -61,6 +61,7 @@ class MypageController extends Controller
         }
         return view('profile' , compact('menu_flg','profile','url'));
     }
+
     public function update(ProfileRequest $request){
         $menu_flg = "1";
         $user = Auth::user();

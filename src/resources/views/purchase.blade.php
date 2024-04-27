@@ -41,7 +41,9 @@
         </div>
         <div class="purchase__left-address">
             <p>　　〒：{{ $profile['post_code'] }}</p>
+            <span class="error">{{$errors->first('post_code')}}</span>
             <p>　住所：{{ $profile['address'] }}</p>
+            <span class="error">{{$errors->first('address')}}</span>
             @if (!empty($profile['building']))
             <p>　建物：{{ $profile['building'] }}</p>
             @endif

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <?php
-use App\Models\buyer;
+use App\Models\Buyer;
 $buyer = buyer::create([
     'user_id' => $user_id,
     'items_id' => $items_id,
